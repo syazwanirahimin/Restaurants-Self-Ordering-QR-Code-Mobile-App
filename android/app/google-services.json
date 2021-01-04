@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "726926500348",
+    "project_id": "final-project-77c39",
+    "storage_bucket": "final-project-77c39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726926500348:android:2492e13bbd1b6085a85279",
+        "android_client_info": {
+          "package_name": "com.thegrowingdeveloper.menu_qr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726926500348-4dib1j1vgu72sg71up9chvoiomvn2m29.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thegrowingdeveloper.menu_qr",
+            "certificate_hash": "de36a821531d6326136b95fbdea4462c192f2454"
+          }
+        },
+        {
+          "client_id": "726926500348-9qq6k0s86k6s693c6lajkhrleasudjah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhb1tqOdcliH0GIbJEVIRkcb92xWBIP4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726926500348-9qq6k0s86k6s693c6lajkhrleasudjah.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "726926500348-alsit7j852chdhei5c6jvmq9ssoetcre.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.thegrowingdeveloper.menuyo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726926500348:android:2eb5698f32d39e6ea85279",
+        "android_client_info": {
+          "package_name": "com.thegrowingdeveloper.menuyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726926500348-2ihb9vldmvupq0ceeptmac54jebevcc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thegrowingdeveloper.menuyo",
+            "certificate_hash": "de36a821531d6326136b95fbdea4462c192f2454"
+          }
+        },
+        {
+          "client_id": "726926500348-9qq6k0s86k6s693c6lajkhrleasudjah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhb1tqOdcliH0GIbJEVIRkcb92xWBIP4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726926500348-9qq6k0s86k6s693c6lajkhrleasudjah.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "726926500348-alsit7j852chdhei5c6jvmq9ssoetcre.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.thegrowingdeveloper.menuyo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

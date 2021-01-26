@@ -1,47 +1,24 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:menuyo/screens/landing_page.dart';
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'home.dart';
-import 'auth/signup.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Menuyo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+          textTheme: GoogleFonts.poppinsTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          accentColor: Color(0xFFFF1E00)
       ),
-      home: IntroScreen(),
+      home: LandingPage(),
     );
-  }
-}
-
-class IntroScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    User result = FirebaseAuth.instance.currentUser;
-    return new SplashScreen(
-        navigateAfterSeconds: result != null ? Home(uid: result.uid) : SignUp(),
-        seconds: 5,
-        title: new Text(
-          'Welcome To Menuyo!',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-        ),
-        image: Image.asset('assets/images/dart.png', fit: BoxFit.scaleDown),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("flutter"),
-        loaderColor: Colors.red);
   }
 }

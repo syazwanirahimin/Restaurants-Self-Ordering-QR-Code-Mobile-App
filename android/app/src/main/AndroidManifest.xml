@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.menuyo">
-   <application
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+    <application
         android:label="menuyo"
         android:icon="@mipmap/ic_launcher">
         <activity

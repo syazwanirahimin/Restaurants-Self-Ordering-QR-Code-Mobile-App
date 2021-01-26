@@ -1,7 +1,7 @@
 import 'package:menuyo/services/firebase_services.dart';
 import 'package:menuyo/tabs/home_tab.dart';
 import 'package:menuyo/tabs/saved_tab.dart';
-import 'package:menuyo/tabs/search_tab.dart';
+import 'package:menuyo/tabs/scan_tab.dart';
 import 'package:menuyo/widgets/bottom_tabs.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               },
               children: [
                 HomeTab(),
-                SearchTab(),
+                ScanPage(),
                 SavedTab(),
               ],
             ),

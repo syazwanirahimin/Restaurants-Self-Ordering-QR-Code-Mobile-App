@@ -113,7 +113,7 @@ class SavedTab extends StatelessWidget {
                                           ),
                                         ),
                                         Text(
-                                          "Size - ${document.data()['size']}",
+                                          "Quantity - ${document.data()['size']}",
                                           style: TextStyle(
                                               fontSize: 16.0,
                                               color: Colors.black,

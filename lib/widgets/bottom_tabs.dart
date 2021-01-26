@@ -44,7 +44,7 @@ class _BottomTabsState extends State<BottomTabs> {
             },
           ),
           BottomTabBtn(
-            imagePath: "assets/images/tab_search.png",
+            imagePath: "assets/images/tab_qr.png",
             selected: _selectedTab == 1 ? true : false,
             onPressed: () {
               widget.tabPressed(1);

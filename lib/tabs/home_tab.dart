@@ -31,7 +31,7 @@ class HomeTab extends StatelessWidget {
                 // Display the data inside a list view
                 return ListView(
                   padding: EdgeInsets.only(
-                    top: 180.0,
+                    top: 160.0,
                     bottom: 12.0,
                   ),
                   children: snapshot.data.docs.map((document) {
@@ -54,7 +54,7 @@ class HomeTab extends StatelessWidget {
             },
           ),
           CustomActionBar(
-            title: "Home",
+            title: "Stall Categories",
             hasBackArrrow: false,
           ),
         ],

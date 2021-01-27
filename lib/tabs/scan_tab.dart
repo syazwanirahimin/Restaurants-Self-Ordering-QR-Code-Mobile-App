@@ -1,5 +1,6 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
+import 'package:menuyo/styles.dart';
 
 class ScanPage extends StatefulWidget {
   @override
@@ -7,14 +8,10 @@ class ScanPage extends StatefulWidget {
 }
 
 class _ScanPageState extends State<ScanPage> {
-  String qrCodeResult = "Not Yet Scanned";
+  String qrCodeResult = "Scan to Pay";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Scanner"),
-        centerTitle: true,
-      ),
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -22,7 +19,7 @@ class _ScanPageState extends State<ScanPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              "Result",
+              "QR Code",
               style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -55,12 +52,16 @@ class _ScanPageState extends State<ScanPage> {
               child: Text(
                 "Open Scanner",
                 style:
-                TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.blue, width: 3.0),
+                  side: BorderSide(color: Colors.black, width: 3.0),
                   borderRadius: BorderRadius.circular(20.0)),
-            )
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Text('Meal Plan Card', style: heading)),
+        buildCreditCard(),
           ],
         ),
       ),
@@ -68,4 +69,43 @@ class _ScanPageState extends State<ScanPage> {
   }
 
 //its quite simple as that you can use try and catch staatements too for platform exception
+  Widget buildCreditCard() {
+    return Container(
+      margin: EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        boxShadow: [raisedBoxShadow],
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: AssetImage('assets/cardbg.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text('196359', style: creditCardNo),
+              //Image.asset('assets/mastercard.png',
+                  //width: 46, fit: BoxFit.fitWidth),
+            ],
+          ),
+          SizedBox(height: 4),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Image.asset('assets/chip.png', width: 30, fit: BoxFit.fitWidth),
+              Text('   Universiti Putra Malaysia', style: creditNormal),
+            ],
+          ),
+          SizedBox(height: 6),
+          Text('Syazwani Rahimin', style: creditCardNo),
+        ],
+      ),
+    );
+  }
 }

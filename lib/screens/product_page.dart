@@ -5,6 +5,7 @@ import 'package:menuyo/widgets/image_swipe.dart';
 import 'package:menuyo/widgets/product_size.dart';
 import 'package:flutter/material.dart';
 
+
 class ProductPage extends StatefulWidget {
   final String productId;
 
@@ -17,6 +18,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   FirebaseServices _firebaseServices = FirebaseServices();
   String _selectedProductSize = "0";
+
 
   Future _addToCart() {
     return _firebaseServices.usersRef

@@ -1,6 +1,7 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:menuyo/styles.dart';
+import 'package:facebook_audience_network/facebook_audience_network.dart';
 
 
 class ScanPage extends StatefulWidget {
@@ -10,7 +11,45 @@ class ScanPage extends StatefulWidget {
 
 class _ScanPageState extends State<ScanPage> {
   String qrCodeResult = "Scan to Pay";
+  bool _isInterstitialAdLoaded = false;
 
+  /// All widget ads are stored in this variable. When a button is pressed, its
+  /// respective ad widget is set to this variable and the view is rebuilt using
+  /// setState().
+  Widget _currentAd = SizedBox(
+    width: 0.0,
+    height: 0.0,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+
+    FacebookAudienceNetwork.init(
+      testingId: "b9f2908b-1a6b-4a5b-b862-ded7ce289e41",
+    );
+    _loadInterstitialAd();
+  }
+
+  void _loadInterstitialAd() {
+    FacebookInterstitialAd.loadInterstitialAd(
+      placementId:
+      "IMG_16_9_APP_INSTALL#2312433698835503_2650502525028617", //"IMG_16_9_APP_INSTALL#2312433698835503_2650502525028617" YOUR_PLACEMENT_ID
+      listener: (result, value) {
+        print(">> FAN > Interstitial Ad: $result --> $value");
+        if (result == InterstitialAdResult.LOADED)
+          _isInterstitialAdLoaded = true;
+
+        /// Once an Interstitial Ad has been dismissed and becomes invalidated,
+        /// load a fresh Ad by calling this function.
+        if (result == InterstitialAdResult.DISMISSED &&
+            value["invalidated"] == true) {
+          _isInterstitialAdLoaded = false;
+          _loadInterstitialAd();
+        }
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +78,7 @@ class _ScanPageState extends State<ScanPage> {
               padding: EdgeInsets.all(15.0),
               onPressed: () async {
                 String codeSanner =
-                await BarcodeScanner.scan(); //barcode scnner
+                    await BarcodeScanner.scan(); //barcode scnner
                 setState(() {
                   qrCodeResult = codeSanner;
                 });
@@ -54,21 +93,57 @@ class _ScanPageState extends State<ScanPage> {
               child: Text(
                 "Open Scanner",
                 style:
-                TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 3.0),
                   borderRadius: BorderRadius.circular(20.0)),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
-              child: Text('Meal Plan Card', style: heading)),
-        buildCreditCard(),
+                padding: EdgeInsets.all(20),
+                child: Text('Meal Plan Card', style: heading)),
+            buildCreditCard(),
+            getAllButtons(),
           ],
         ),
       ),
     );
   }
+
+  //widget ad
+  Widget getAllButtons() {
+    return GridView.count(
+      shrinkWrap: true,
+      crossAxisCount: 2,
+      childAspectRatio: 3,
+      children: <Widget>[
+        _getRaisedButton(
+            title: "Intestitial Ad", onPressed: _showInterstitialAd),
+      ],
+    );
+  }
+
+  Widget _getRaisedButton({String title, void Function() onPressed}) {
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: RaisedButton(
+        onPressed: onPressed,
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
+  _showInterstitialAd() {
+    if (_isInterstitialAdLoaded == true)
+      FacebookInterstitialAd.showInterstitialAd();
+    else
+      print("Interstial Ad not yet loaded!");
+  }
+
+
 
 //its quite simple as that you can use try and catch staatements too for platform exception
   Widget buildCreditCard() {
@@ -93,7 +168,7 @@ class _ScanPageState extends State<ScanPage> {
             children: <Widget>[
               Text('196359', style: creditCardNo),
               //Image.asset('assets/mastercard.png',
-                  //width: 46, fit: BoxFit.fitWidth),
+              //width: 46, fit: BoxFit.fitWidth),
             ],
           ),
           SizedBox(height: 4),

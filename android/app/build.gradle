@@ -73,6 +73,5 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation 'com.android.support:multidex:1.0.3'
     // add and initialise the Mobile Ads SDK
-
-
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
 }

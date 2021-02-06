@@ -42,6 +42,9 @@ dependencies:
   font_awesome_flutter: ^8.11.0
   barcode_scan: ^2.0.1
   #firebase_admob: ^0.11.0+1
+  facebook_audience_network: ^0.8.0
+
+
 
 dev_dependencies:
   flutter_test:

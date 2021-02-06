@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
         ),
-        height: 350.0,
+        height: 300.0,
         margin: EdgeInsets.symmetric(
           vertical: 12.0,
           horizontal: 24.0,
@@ -30,7 +30,7 @@ class ProductCard extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: 350.0,
+              height: 250.0,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.network(

@@ -2,6 +2,7 @@ import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:menuyo/styles.dart';
 
+
 class ScanPage extends StatefulWidget {
   @override
   _ScanPageState createState() => _ScanPageState();
@@ -9,6 +10,7 @@ class ScanPage extends StatefulWidget {
 
 class _ScanPageState extends State<ScanPage> {
   String qrCodeResult = "Scan to Pay";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

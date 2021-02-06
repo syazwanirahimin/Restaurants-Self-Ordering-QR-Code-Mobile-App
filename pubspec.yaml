@@ -35,22 +35,13 @@ dependencies:
   flutter_signin_button: ^1.1.0
   firebase_storage: ^7.0.0
   local_auth: ^0.6.3+4
-  #google_sign_in: ^4.5.9
-  #qr_flutter: ^3.2.0
-  #barcode_scanner: ^1.0.1
   flutter_barcode_scanner: ^1.0.2
-  #pdf: ^2.0.0
-  #flutter_full_pdf_viewer: ^1.0.6
-  #path_provider: ^1.6.27
   cloud_firestore: ^0.16.0
-  #provider: ^4.3.2+4
-  #image_picker: ^0.6.7+21
-  #intl: ^0.16.1
-  #date_format: ^1.0.9
   google_fonts: ^1.1.1
   flutter_rating_bar: ^3.2.0+1
   font_awesome_flutter: ^8.11.0
   barcode_scan: ^2.0.1
+  #firebase_admob: ^0.11.0+1
 
 dev_dependencies:
   flutter_test:

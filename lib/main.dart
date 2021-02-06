@@ -12,11 +12,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
+        brightness: Brightness.light,
           textTheme: GoogleFonts.poppinsTextTheme(
             Theme.of(context).textTheme,
           ),
-          accentColor: Color(0xFFFF1E00)
+          accentColor: Color(0xFF1A237E)
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+          textTheme: GoogleFonts.poppinsTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          accentColor: Color(0xFF1A237E)
       ),
       home: LandingPage(),
     );

@@ -7,4 +7,4 @@ Use Case
 - Find Stall to find the menu 
 - Add to cart
 - Saved meal plan card information
-- Scan Qr code (to pay / to view menu)
+- Scan Qr code (to pay)

@@ -4,7 +4,9 @@ Menuyo app is suitable for students to avoid long lines for lunch.
 Use Case
 - Login
 - Register
-- Find Stall to find the menu 
+- Find Meal available on university campus cafe/stall/restaurants
 - Add to cart
 - Saved meal plan card information
 - Scan Qr code (to pay)
+
+![Demo](demo.gif)

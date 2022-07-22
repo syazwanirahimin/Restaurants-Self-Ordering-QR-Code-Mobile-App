@@ -9,4 +9,4 @@ Use Case
 - Saved meal plan card information
 - Scan Qr code (to pay)
 
-![Demo](demo.gif)
+![Demo](demo.gif){ width=50% }
